@@ -44,10 +44,10 @@
 // title[0].style.fontWeight='bold'
 
 // GET ELEMENT BY TAG NAME.
-var li = document.getElementsByTagName('li');
-li[0].style.backgroundColor = "red"
-console.log(li[0])
-console.log(li)
+// var li = document.getElementsByTagName('li');
+// li[0].style.backgroundColor = "red"
+// console.log(li[0])
+// console.log(li)
 
 // QUERYSELECTORALL && QUERYSELECTOR
 
@@ -55,34 +55,50 @@ console.log(li)
 
 
 // this is important:-
-var submit = document.querySelector('input[type="submit"]');
+// var submit = document.querySelector('input[type="submit"]');
 
-submit.value = 'send';
-var item = document.querySelector('.list-group-item');
-item.style.color = 'red';
+// submit.value = 'SEND';
+// var item = document.querySelector('.list-group-item');
+// item.style.color = '#bc21';
+// submit.addEventListener(('mouseover'),(event) =>{
+//     submit.style.backgroundColor='green'
+// })
 
-var lastItem = document.querySelector('.list-group-item:last-child');
-lastItem.style.color = 'blue';
+// var lastItem = document.querySelector('.list-group-item:last-child');
+// lastItem.style.color = 'blue';
 
-var secondChild = document.querySelector('.list-group-item:nth-child(2)'); // This nth child getting process is very important.
-secondChild.style.color = "coral"
+// var secondChild = document.querySelector('.list-group-item:nth-child(2)'); // This nth child getting process is very important.
+// secondChild.style.color = "coral"
 
-var titles = document.querySelectorAll('.title');
-console.log(titles);
-titles.textContent= 'Hello.....!';
+// var titles = document.querySelectorAll('.title');
+// console.log(titles);
+// titles.textContent= 'Hello.....!';
 
-var odd = document.querySelectorAll('li:nth-child(odd'); // This odd even is important in form.
-var even = document.querySelectorAll('li:nth-child(even');
-for(let i=0; i<odd.length; i++){
-    odd[i].style.backgroundColor='#f4f4f4'
-    even[i].style.backgroundColor='#ccc'
+// var odd = document.querySelectorAll('li:nth-child(odd'); // This odd even is important in form.
+// var even = document.querySelectorAll('li:nth-child(even');
+// for(let i=0; i<odd.length; i++){
+//     odd[i].style.backgroundColor='#f4f4f4'
+//     even[i].style.backgroundColor='#ccc'
+// }
+
+
+// GET ELEMENT BY QUERYSELECTOR:=
+// var item = document.querySelector('.list-group-item:nth-child(2)');
+// item.style.backgroundColor='green';
+
+// var item = document.querySelector('.list-group-item:nth-child(3)');
+// item.style.color='white';
+
+
+// GET ELEMENT BY QUERYSELECTORALL:-
+
+var item = document.querySelectorAll('.list-group-item');
+item[1].style.color='green';
+
+var items = document.querySelectorAll('.list-group-item:nth-child(odd)');
+for(let i=0; i<items.length; i++){
+items[i].style.backgroundColor='green'
 }
-
-
-
-
-
-
 
 
 
