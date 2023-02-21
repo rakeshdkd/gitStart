@@ -35,6 +35,15 @@ console.log(title[0]);
 title[0].style.color='green'
 title[0].style.fontWeight='bold'
 
+var item = document.querySelectorAll(".list-group-item");
+item[2].style.backgroundColor='green'
+
+for(let i=0; i<item.length; i++){
+    item[i].style.fontWeight='bold'
+    item[i].style.color='#1b99'
+
+}
+
 
 
 
