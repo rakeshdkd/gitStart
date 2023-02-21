@@ -23,7 +23,7 @@
 // heading.innerHTML = "<h2>Yeaiiiii...!</h2>"
 // heading.innerHTML = "Yeaiiiii...!";
 
-// heading.style.borderBottom = "8px solid black"
+heading.style.borderBottom = "8px solid black"
 // console.log(heading);
 
 // GET ELEMENT BY CLASS NAME.
