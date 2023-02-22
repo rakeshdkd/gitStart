@@ -159,7 +159,7 @@ console.log(itemList.parentElement);
 // console.log(itemList.previousElementSibling);
 // itemList.previousElementSibling.style.color="red"
 
-/*
+
 // CREATE ELEMENT : yaha hum element create kr rhe h.
 var newDiv = document.createElement('div');
 // add class to it 
@@ -219,4 +219,3 @@ ul.insertBefore(newDiv1,li);
 newDiv1.style.fontSize="21px"
 newDiv1.style.fontWeight="bold"
 newDiv1.style.color="blue"
-*/
