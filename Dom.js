@@ -1,3 +1,5 @@
+//--------------------------------------------------------------------------------------------------------
+// 1st Video:-
 // EXAMINE THE DOCUMENT OBJECTS.
 // console.log(document.domain);
 // console.log(document.URL);
@@ -13,7 +15,6 @@
 // console.log(document.forms[0]);
 // console.log(document.links);
 // console.log(document.images);
-
 
 
 // GET ELEMENT BY ID.
@@ -100,10 +101,11 @@
 // items[i].style.backgroundColor='green'
 // }
 
-
+//--------------------------------------------------------------------------------------------------------
+// 2nd Video:-
 // TRAVERS THE DOM:
 
-var itemList = document.querySelector('#items');
+// var itemList = document.querySelector('#items');
 
 // Parent node :- This is a very important thing to get any parent node.
 // console.log(itemList.parentNode);
@@ -115,7 +117,7 @@ var itemList = document.querySelector('#items');
 // console.log(itemList.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
 
 // Prent element
-console.log(itemList.parentElement);
+// console.log(itemList.parentElement);
 // itemList.parentNode.style.backgroundColor="#cbc"
 // console.log(itemList.parentElement.parentElement);
 // console.log(itemList.parentElement.parentElement.parentElement);
@@ -220,3 +222,91 @@ newDiv1.style.fontSize="21px"
 newDiv1.style.fontWeight="bold"
 newDiv1.style.color="blue"
 */
+
+//--------------------------------------------------------------------------------------------------------
+
+// 3rd video:-
+
+
+
+// 4th Video:
+
+var form = document.getElementById('addForm');
+var itemList = document.getElementById('items');
+var filter = document.getElementById('filter');
+
+// Form submit event
+form.addEventListener('submit', addItem);
+// Delete event
+itemList.addEventListener('click', removeItem);
+// Filter event
+filter.addEventListener('keyup', filterItems);
+
+// Add item
+function addItem(e) {
+    e.preventDefault();
+
+    // Get input value
+    var newItem = document.getElementById('item').value;
+
+    // Create new li element
+    var li = document.createElement('li');
+    // Add class
+    li.className = 'list-group-item';
+    // Add text node with input value
+    li.appendChild(document.createTextNode(newItem));
+
+    // Create edit button element
+    var editBtn = document.createElement('button');
+    // Create del button element
+    var deleteBtn = document.createElement('button');
+
+    // Add classes to edit button
+    editBtn.className = 'btn btn-outline-warning btn-sm float-right edit ml-2 ';
+    // Add classes to del button
+    deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+
+    // Append text node
+    editBtn.appendChild(document.createTextNode('Edit'));
+    // Append text node
+    deleteBtn.appendChild(document.createTextNode('X'));
+
+    // Append button to li
+    li.appendChild(editBtn);
+
+    // Append button to li
+    li.appendChild(deleteBtn);
+
+    // Append li to list
+    itemList.appendChild(li);
+    // Append li to list
+    itemList.appendChild(li);
+
+}
+
+// Remove item
+function removeItem(e) {
+    if (e.target.classList.contains('delete')) {
+        if (confirm('Are You Sure?')) {
+            var li = e.target.parentElement;
+            itemList.removeChild(li);
+        }
+    }
+}
+
+// Filter Items
+function filterItems(e) {
+    // convert text to lowercase
+    var text = e.target.value.toLowerCase();
+    // Get lis
+    var items = itemList.getElementsByTagName('li');
+    // Convert to an array
+    Array.from(items).forEach(function (item) {
+        var itemName = item.firstChild.textContent;
+        if (itemName.toLowerCase().indexOf(text) != -1) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
