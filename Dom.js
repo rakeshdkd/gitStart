@@ -1,3 +1,4 @@
+/*
 //--------------------------------------------------------------------------------------------------------
 // 1st Video:-
 // EXAMINE THE DOCUMENT OBJECTS.
@@ -221,13 +222,26 @@ ul.insertBefore(newDiv1,li);
 newDiv1.style.fontSize="21px"
 newDiv1.style.fontWeight="bold"
 newDiv1.style.color="blue"
-<<<<<<< HEAD
 */
 
 //--------------------------------------------------------------------------------------------------------
 
 // 3rd video:-
 
+var button = document.getElementById('button');
+button.addEventListener('click', buttonCLick);
+function buttonCLick() {
+    // console.log("button clicked.")
+
+}
+var input = document.createElement('input');
+input.setAttribute('type', 'text')
+input.setAttribute('class', 'form-control mr-2')
+input.id = 'description';
+console.log(input);
+var form = document.getElementById('addForm');
+var inp = document.querySelector('form .btn');
+form.insertBefore(input, inp)
 
 
 // 4th Video:
@@ -249,13 +263,13 @@ function addItem(e) {
 
     // Get input value
     var newItem = document.getElementById('item').value;
-
+    var description = document.getElementById('description').value;
     // Create new li element
     var li = document.createElement('li');
     // Add class
     li.className = 'list-group-item';
     // Add text node with input value
-    li.appendChild(document.createTextNode(newItem));
+    li.appendChild(document.createTextNode(newItem +" :- " +description));
 
     // Create edit button element
     var editBtn = document.createElement('button');
@@ -311,5 +325,3 @@ function filterItems(e) {
         }
     });
 }
-=======
->>>>>>> e1589b6c91a303482d3eddedd7e01a7cfe3f1c59
